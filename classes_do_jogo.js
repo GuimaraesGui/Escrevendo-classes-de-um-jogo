@@ -1,34 +1,29 @@
-class classes_jogaveis {
-    criar_classe(nome, idade, classe){
-        this.nome = nome
-        this.idade = idade
-        this.classe = classe 
-    }
-    skills (classe){
-        if (classe == "Guerreiro"){
-            let skill = "usou espada"  
-        } else if (classe == "Mago"){
-            let skill = "usou magia"  
-        } else if (classe == "Monge"){
-            let skill = "usou artes marciais"  
-        } else if (classe == "Ninja"){
-            let skill = "usou shuriken"  
-        }
+let ficha_de_personagem = {
+    nome: "João das Neves",
+    idade: 17,
+    classe: "Ninja"
+}
+
+class char_info {
+    constructor(classe) {
+        this.classe = classe
     }
     atacar(classe){
         if (classe == "Guerreiro"){
-            console.log(`O ${this.classe} atacou usando ${this.skill}`)   
-        } else if (classe == "Mago"){
-            console.log(`O ${this.classe} atacou usando ${this.skill}`)
-        } else if (classe == "Monge"){
-            console.log(`O ${this.classe} atacou usando ${this.skill}`)
-        } else if (classe == "Ninja"){
-            console.log(`O ${this.classe} atacou usando ${this.skill}`)
+            console.log(`\nO ${this.classe} atacou usando espada.`)
+        } else if (classe  == "Mago") {
+            console.log(`\nO ${this.classe} atacou usando magia.`)
+        } else if (classe == "Monge") {
+            console.log(`\nO ${this.classe} atacou usando artes marciais.`)
+        } else if (classe == "Ninja") {
+            console.log(`\nO ${this.classe} atacou usando Shuriken.`)
         }
+    }
+    print_ficha(){
+        console.log(`Nome: ${ficha_de_personagem.nome}\nIdade: ${ficha_de_personagem.idade}\nClasse: ${ficha_de_personagem.classe}`)
     }
 }
 
-let ficha_de_personagem = new classes_jogaveis("João das Neves", "17", "Guerreiro")
-
-console.log(ficha_de_personagem)
-ficha_de_personagem.atacar()
+let objeto = new char_info(ficha_de_personagem.classe)
+objeto.print_ficha()
+objeto.atacar(ficha_de_personagem.classe)
